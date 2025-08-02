@@ -15,6 +15,7 @@ body {
     align-items: start;
     min-height: 100vh;
     padding: 40px 20px;
+    font-size: 16px;
 }
 
 /* Container Box */
@@ -40,14 +41,16 @@ h2 {
     color: #34495e;
 }
 
-/* List Styling */
-.list {
+/* ===========================
+   Global List Styling (used on home page)
+   =========================== */
+.page-home .list {
     list-style-type: none;
     padding-left: 0;
     margin-bottom: 30px;
 }
 
-.list li {
+.page-home .list li {
     padding: 12px 16px;
     background-color: #ecf0f1;
     border-radius: 6px;
@@ -56,47 +59,147 @@ h2 {
     cursor: pointer;
 }
 
-.list li:hover {
+.page-home .list li:hover {
     background-color: #d0d8dc;
 }
 
-.list li a {
+.page-home .list li a {
     display: block;
-    /* Make the <a> fill the entire <li> */
     color: inherit;
-    /* Use the same text color as list */
     text-decoration: none;
-    /* Remove underline */
-    padding: 0px 0px;
-    /* Same padding as <li> to fill area */
+    padding: 0;
 }
 
-.list li a:hover {
+.page-home .list li a:hover {
     background-color: #d0d8dc;
-    /* Same hover effect as your <li> hover */
 }
 
-<style>
+/* ===========================
+   Explanation Box (all pages)
+   =========================== */
+.explanation {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f0f4f8;
+    border-left: 4px solid #7f8c8d;
+    border-radius: 6px;
+    line-height: 1.6;
+    font-size: 16px;
+    color: #444;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
 
-/* Extra nested list style for clarity */
-ul.conjunction-list>li {
+.explanation h2 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 12px;
+}
+
+.explanation p {
+    margin-bottom: 12px;
+}
+
+/* ===========================
+   Examples Box & Lists
+   =========================== */
+
+/* Base style for all example lists */
+.examples li {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Scoped styles for conjunction page */
+/* Stack everything vertically */
+.page-conjunction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    /* Adds vertical spacing between containers */
+    padding: 20px;
+}
+
+.page-conjunction .example {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fefefe;
+    border-left: 4px solid #3498db;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.page-conjunction .example h2 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 12px;
+}
+
+/* Scoped example list items for conjunction page */
+.page-conjunction ul.examples li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: #2c3e50;
+}
+
+/* Optional further scoping with a component class */
+.page-conjunction ul.und-examples li {
+    background-color: #fefefe;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+/* ===========================
+   Responsive Adjustments
+   =========================== */
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+}
+
+/* ===========================
+   conjunction Navigation
+   =========================== */
+.conjunction-nav {
     margin-bottom: 30px;
 }
 
-ul.examples {
-    list-style-type: decimal;
-    margin-left: 20px;
-    margin-top: 8px;
+.conjunction-nav .list {
+    list-style-type: none;
+    padding-left: 0;
+    max-width: 200px;
+    /* optional, keeps nav narrow */
 }
 
-ul.examples li {
-    margin-bottom: 6px;
+.conjunction-nav .list li {
+    padding: 12px 16px;
+    background-color: #ecf0f1;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: background 0.3s ease;
 }
 
-.word-order {
-    font-style: italic;
-    margin-left: 20px;
-    margin-top: 6px;
-    margin-bottom: 8px;
-    color: #555;
+.conjunction-nav .list li:hover {
+    background-color: #d0d8dc;
+}
+
+.conjunction-nav .list li a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    /* make entire li clickable */
+}
+
+.conjunction-nav .list li a:hover {
+    background-color: #d0d8dc;
 }
