@@ -5,14 +5,19 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Body Styling */
 body {
     font-family: "Helvetica Neue", sans-serif;
     background-color: #f8f9fa;
     color: #333;
     display: flex;
-    justify-content: center;
-    align-items: start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     min-height: 100vh;
     padding: 40px 20px;
     font-size: 16px;
@@ -26,6 +31,7 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 100%;
+    margin-bottom: 50px;
 }
 
 /* Heading Styles */
@@ -44,6 +50,18 @@ h2 {
 /* ===========================
    Global List Styling (used on home page)
    =========================== */
+.page-conjunction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.page-home .olist {
+    padding-left: 16px;
+    margin-bottom: 30px;
+}
+
 .page-home .list {
     list-style-type: none;
     padding-left: 0;
@@ -116,8 +134,6 @@ h2 {
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    /* Adds vertical spacing between containers */
-    padding: 20px;
 }
 
 .page-conjunction .example {
@@ -165,41 +181,4 @@ h2 {
     h1 {
         font-size: 22px;
     }
-}
-
-/* ===========================
-   conjunction Navigation
-   =========================== */
-.conjunction-nav {
-    margin-bottom: 30px;
-}
-
-.conjunction-nav .list {
-    list-style-type: none;
-    padding-left: 0;
-    max-width: 200px;
-    /* optional, keeps nav narrow */
-}
-
-.conjunction-nav .list li {
-    padding: 12px 16px;
-    background-color: #ecf0f1;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    transition: background 0.3s ease;
-}
-
-.conjunction-nav .list li:hover {
-    background-color: #d0d8dc;
-}
-
-.conjunction-nav .list li a {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-    /* make entire li clickable */
-}
-
-.conjunction-nav .list li a:hover {
-    background-color: #d0d8dc;
 }
